@@ -10,3 +10,12 @@ body {
 a {
   color: #4ea1ff;
 }
+
+.project {
+  margin-bottom: 60px;
+}
+
+.project img {
+  max-width: 100%;
+  border-radius: 8px;
+}
