@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Nome Cognome | Portfolio</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Lorenzo Rossi | Portfolio</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
+  <canvas id="background-canvas"></canvas>
+  <header class="header">
+    <h1 class="name">
+      Lorenzo Rossi<br>
+      <span class="alias">SWeeb</span>
+    </h1>
+    <p class="subtitle">
+      Unity VR Gameplay and Performance Developer
+    </p>
 
-<h1>Projects</h1>
-<div id="projects"></div>
+    <!-- Pulsante scroll con freccia e testo -->
+    <div id="scroll-btn" class="scroll-button">
+      <img src="./Assets/Down Squared Arrow.png" alt="Freccia giù">
+      <span>PROJECTS</span>
+    </div>
 
-<script src="js/projects.js"></script>
+
+    <!-- Testo invito a scrollare -->
+<!-- Testo invito a scrollare con immagine -->
+<div id="scroll-hint-container">
+  <p id="scroll-hint-text">Scroll down</p>
+  <img id="scroll-hint-arrow" src="./Assets/Scroll Down Arrow.png" alt="Freccia scroll" />
+</div>
+
+
+    <!-- Sezione progetti -->
+    <section id="projects" class="projects-section">
+      <div id="projects-carousel" class="carousel"></div>
+    </section>
+
+    <script src="./js/projects.js"></script>
+    <script src="./js/scroll.js"></script>
+    <script src="./js/background.js"></script>
+
 </body>
+
 </html>

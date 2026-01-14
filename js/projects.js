@@ -1,31 +1,33 @@
 const PROJECTS_PATH = "Projects";
-
 const projectFolders = [
-  "AOT Revive"
+  "AOT Revive",
+  "Curbit"
 ];
 
-const container = document.getElementById("projects");
+const carousel = document.getElementById("projects-carousel");
 
 async function loadProject(folder) {
   const res = await fetch(`${PROJECTS_PATH}/${folder}/project.json`);
   if (!res.ok) return;
 
-  const data = await res.json();
+  const p = await res.json();
 
-  const el = document.createElement("div");
-  el.className = "project";
+  const card = document.createElement("div");
+  card.className = "project-card";
 
-  el.innerHTML = `
-    <h2>${data.title}</h2>
-    <p><strong>${data.tagline}</strong></p>
-    <p>${data.description}</p>
-    <p>${data.tech.join(" · ")}</p>
-    <img src="${PROJECTS_PATH}/${folder}/${data.media.cover}" />
-    <br>
-    <a href="${data.github}" target="_blank">GitHub</a>
+  card.innerHTML = `
+    <img src="${PROJECTS_PATH}/${folder}/${p.media.cover}">
+    <h3>${p.title}</h3>
+    <p>${p.tagline}</p>
+    <p>${p.tech.join(" · ")}</p>
+    <a href="${p.github}" target="_blank">GitHub</a>
   `;
 
-  container.appendChild(el);
+  carousel.appendChild(card);
 }
 
-projectFolders.forEach(loadProject);
+Promise.all(projectFolders.map(loadProject)).then(() => {
+  if (projectFolders.length <= 2) {
+    carousel.style.justifyContent = "center";
+  }
+});
