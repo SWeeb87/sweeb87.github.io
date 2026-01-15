@@ -59,21 +59,50 @@ function perlin(x, y) {
 
 /* ================= GRID ================= */
 
+function updateCanvasSize() {
+  const width = document.documentElement.scrollWidth;
+  const height = document.documentElement.scrollHeight;
+
+  if (canvas.width !== width || canvas.height !== height) {
+    canvas.width = width;
+    canvas.height = height;
+
+    // Aggiorna cols/rows solo se la dimensione cambia
+    cols = Math.ceil(canvas.width / settings.cellSize);
+    rows = Math.ceil(canvas.height / settings.cellSize);
+
+    // Mantieni la griglia esistente se possibile, altrimenti ricrea
+    if (!cells || cells.length !== cols * rows) {
+      cells = new Array(cols * rows);
+      for (let i = 0; i < cells.length; i++) {
+        cells[i] = Math.random() > 0.5 ? "1" : "0";
+      }
+    }
+  }
+}
+
+window.addEventListener("resize", updateCanvasSize);
+window.addEventListener("scroll", updateCanvasSize);
+window.addEventListener("load", updateCanvasSize);
+
 let cells = [];
 let cols = 0;
 let rows = 0;
 
 function rebuildGrid() {
+  // Aggiorna sempre la larghezza e altezza
   canvas.width = document.documentElement.scrollWidth;
   canvas.height = document.documentElement.scrollHeight;
 
   cols = Math.ceil(canvas.width / settings.cellSize);
   rows = Math.ceil(canvas.height / settings.cellSize);
 
-  cells = new Array(cols * rows);
-
-  for (let i = 0; i < cells.length; i++) {
-    cells[i] = Math.random() > 0.5 ? "1" : "0";
+  // Ricrea la griglia solo se cambia il numero di celle
+  if (!cells || cells.length !== cols * rows) {
+    cells = new Array(cols * rows);
+    for (let i = 0; i < cells.length; i++) {
+      cells[i] = Math.random() > 0.5 ? "1" : "0";
+    }
   }
 
   ctx.font = `${settings.cellSize}px monospace`;

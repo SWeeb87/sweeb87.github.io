@@ -47,3 +47,14 @@ backToTop.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
+const aboutBtn = document.getElementById("About-btn");
+const aboutSection = document.getElementById("about-me");
+
+aboutBtn.addEventListener("click", () => {
+  const offset = window.innerHeight * 0.2; // leggermente sotto
+  window.scrollTo({
+    top: aboutSection.offsetTop - offset,
+    behavior: "smooth"
+  });
+});
