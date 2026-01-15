@@ -5,11 +5,39 @@
   <meta charset="UTF-8">
   <title>Lorenzo Rossi | Portfolio</title>
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/png" href="./Assets/favicon.png">
 </head>
 
+<script>
+window.addEventListener("load", () => {
+  const buttons = document.querySelector(".main-buttons");
+  const projectsSection = document.querySelector(".projects-section");
+
+  function updateProjectsPosition() {
+    const buttonsRect = buttons.getBoundingClientRect();
+    const scrollY = window.scrollY || window.pageYOffset;
+    const bottom = buttonsRect.bottom + scrollY;
+
+    // imposta margin-top solo sulla sezione progetti
+    projectsSection.style.marginTop = (bottom + -500) + "px"; // 30px gap
+  }
+
+  updateProjectsPosition();
+  window.addEventListener("resize", updateProjectsPosition);
+});
+</script>
+
+
 <body>
+  <div id="theme-fade-overlay"></div>
+  <div id="screen-fade"></div>
   <canvas id="background-canvas"></canvas>
   <header class="header">
+
+  <div id="theme-toggle">
+    <img id="theme-toggle-img" src="./Assets/Light Toggle.png" alt="Toggle Theme">
+  </div>
+
     <h1 class="name">
       Lorenzo Rossi<br>
       <span class="alias">SWeeb</span>
@@ -18,18 +46,33 @@
       Unity VR Gameplay and Performance Developer
     </p>
 
-    <!-- Pulsante scroll con freccia e testo -->
-    <div id="scroll-btn" class="scroll-button">
-      <img src="./Assets/Down Squared Arrow.png" alt="Freccia giù">
-      <span>PROJECTS</span>
-    </div>
+    <!-- Pulsanti principali -->
+    <div class="main-buttons">
+      <div id="scroll-btn" class="scroll-button">
+        <img src="./Assets/Down Squared Arrow.png" alt="Freccia giù">
+        <span>PROJECTS</span>
+      </div>
 
+      <div id="resume-btn" class="scroll-button">
+        <img src="./Assets/Down Squared Arrow.png" alt="Resume">
+        <span>RESUME</span>
+      </div>
+
+      <div id="About-btn" class="scroll-button">
+        <img src="./Assets/Down Squared Arrow.png" alt="About">
+        <span>ABOUT ME</span>
+      </div>
+    </div>
 
     <!-- Testo invito a scrollare -->
 <!-- Testo invito a scrollare con immagine -->
 <div id="scroll-hint-container">
   <p id="scroll-hint-text">Scroll down</p>
   <img id="scroll-hint-arrow" src="./Assets/Scroll Down Arrow.png" alt="Freccia scroll" />
+</div>
+
+<div id="back-to-top">
+  <img src="./Assets/Back to Top.png" alt="Back to Top">
 </div>
 
 
@@ -41,7 +84,8 @@
     <script src="./js/projects.js"></script>
     <script src="./js/scroll.js"></script>
     <script src="./js/background.js"></script>
+    <script src="./js/themeToggle.js" defer></script>
 
 </body>
-
+<div id="theme-fade-overlay"></div>
 </html>

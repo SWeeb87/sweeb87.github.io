@@ -26,3 +26,24 @@ window.addEventListener("scroll", () => {
     scrollHintText.textContent = "Scroll down";
   }
 });
+
+const backToTop = document.getElementById("back-to-top");
+
+// Mostra/nascondi bottone quando scrolli
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) { // compare dopo aver scrollato 100px
+    backToTop.style.opacity = 1;
+    backToTop.style.pointerEvents = "auto";
+  } else {
+    backToTop.style.opacity = 0;
+    backToTop.style.pointerEvents = "none";
+  }
+});
+
+// Click per tornare in cima con smooth scroll
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
