@@ -21,7 +21,7 @@ In my spare time I also design and build tech projects, like a fully autonomous 
       aboutText1: `Ciao! Sono Lorenzo Rossi, anche noto come "SWeeb". Sono uno sviluppatore Unity VR specializzato in gameplay e ottimizzazione.
 Mi piace esprimere la mia creatività e affrontare nuove sfide con soluzioni intelligenti.`,
       aboutText2: `Creo giochi sia per PC che per VR, soprattutto per Meta Quest 2 e 3 dove la performance è fondamentale.
-Nel tempo libero progetto e costruisco anche progetti tecnologici, come uno Scanner 3D da Scrivania completamente autonomo.`,
+Nel tempo libero progetto e costruisco anche progetti tecnologici, come uno Scanner 3D da scrivania completamente autonomo.`,
       projects: "PROGETTI",
       resume: "CURRICULUM",
       about: "CHI SONO",
