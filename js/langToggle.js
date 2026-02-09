@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
     EN: {
       subtitle: "Unity VR Gameplay and Performance Developer",
       aboutTitle: "About Me",
-      aboutText1: `Ciao! I'm Lorenzo Rossi, also known as "SWeeb". I'm a Unity VR Gameplay & Performance Developer and
+      aboutText1: `I'm Lorenzo Rossi, also known as "SWeeb". I'm a Unity VR Gameplay & Performance Developer and
 also an electrician. I like expressing my creativity and finding new challenges to overcome with clever solutions.`,
       aboutText2: `I create games both for PC and VR, especially for the Meta Quest 2 and 3 where performance is the key.
 In my spare time I also design and build tech projects, like a fully autonomous Desk 3D Scanner.`,
@@ -28,7 +28,7 @@ In my spare time I also design and build tech projects, like a fully autonomous 
     IT: {
       subtitle: "Sviluppatore Unity VR per Gameplay e Performance",
       aboutTitle: "Chi Sono",
-      aboutText1: `Ciao! Sono Lorenzo Rossi, anche noto come "SWeeb". Sono uno sviluppatore Unity VR specializzato in gameplay e ottimizzazione.
+      aboutText1: `Sono Lorenzo Rossi, anche noto come "SWeeb". Sono uno sviluppatore Unity VR specializzato in gameplay e ottimizzazione.
 Mi piace esprimere la mia creatività e affrontare nuove sfide con soluzioni intelligenti.`,
       aboutText2: `Creo giochi sia per PC che per VR, soprattutto per Meta Quest 2 e 3 dove la performance è fondamentale.
 Nel tempo libero progetto e costruisco anche progetti tecnologici, come uno Scanner 3D da scrivania completamente autonomo.`,
